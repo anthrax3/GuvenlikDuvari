@@ -1,0 +1,11 @@
+---
+# Calistirildiginda FirewallBuilder Kurulumu Yapilir
+- hosts: mys 
+  remote_user: ahtapotops
+  sudo: yes
+  vars_files:
+  - /etc/ansible/roles/firewallbuilder/vars/package.yml
+  - /etc/ansible/roles/firewallbuilder/vars/fwbuilder.yml
+  - /etc/ansible/roles/firewallbuilder/vars/directory.yml
+  roles:
+  - { role: firewallbuilder }

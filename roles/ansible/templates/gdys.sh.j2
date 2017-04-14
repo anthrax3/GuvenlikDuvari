@@ -1,0 +1,16 @@
+## Bu dosya ansible tarafindan yonetilmektedir!
+## Burada yapilan degisikliklerin uzerine yazilir!!
+{{ ansible_managed }}
+
+#!/bin/bash
+
+cd /etc/fw/gdys && git pull
+
+EXIT=$?
+
+if [ "$EXIT" -eq 0 ]
+then
+        /usr/bin/ansible-playbook /etc/ansible/playbooks/firewall.yml
+else
+        logger -p local5.crit "Ansible GDYS Repo Update Failed !!"
+fi
