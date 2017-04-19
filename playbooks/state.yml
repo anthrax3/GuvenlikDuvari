@@ -1,0 +1,69 @@
+---
+# Sistem stabilitesini tutacak olan ansible dosyasi 
+- hosts: all 
+  remote_user: ahtapotops 
+  sudo: yes
+  vars_files:
+  - /etc/ansible/roles/base/vars/group.yml
+  - /etc/ansible/roles/base/vars/user.yml
+  - /etc/ansible/roles/base/vars/repo.yml
+  - /etc/ansible/roles/base/vars/ntp.yml
+  - /etc/ansible/roles/base/vars/package.yml
+  - /etc/ansible/roles/base/vars/kernelmodules_remove.yml
+  - /etc/ansible/roles/base/vars/kernelmodules_blacklist.yml
+  - /etc/ansible/roles/base/vars/host.yml
+  - /etc/ansible/roles/base/vars/audit.yml
+  - /etc/ansible/roles/base/vars/sudo.yml
+  - /etc/ansible/roles/base/vars/ssh.yml
+  - /etc/ansible/roles/base/vars/grub.yml
+  - /etc/ansible/roles/base/vars/logger.yml
+  - /etc/ansible/roles/base/vars/logrotate.yml
+  - /etc/ansible/roles/base/vars/directory.yml
+  - /etc/ansible/roles/base/vars/profile.yml
+  roles:
+  - { role: base }
+ 
+- hosts: mys 
+  remote_user: ahtapotops
+  vars_files:
+  - /etc/ansible/roles/ansible/vars/package.yml
+  - /etc/ansible/roles/ansible/vars/ansible.yml
+  - /etc/ansible/roles/ansible/vars/directory.yml
+  - /etc/ansible/roles/ansible/vars/git.yml
+  roles:
+  - { role: ansible }
+
+- hosts: mys 
+  remote_user: ahtapotops
+  sudo: yes
+  vars_files:
+  - /etc/ansible/roles/gitlab/vars/package.yml
+  - /etc/ansible/roles/gitlab/vars/hook.yml
+  roles:
+  - { role: gitlab }
+
+- hosts: mys 
+  remote_user: ahtapotops
+  sudo: yes
+  vars_files:
+  - /etc/ansible/roles/firewallbuilder/vars/package.yml
+  - /etc/ansible/roles/firewallbuilder/vars/fwbuilder.yml
+  - /etc/ansible/roles/firewallbuilder/vars/directory.yml
+  roles:
+  - { role: firewallbuilder }
+
+- hosts: firewall 
+  remote_user: ahtapotops
+  sudo: yes
+  vars_files:
+  - /etc/ansible/roles/firewall/vars/package.yml
+  - /etc/ansible/roles/firewall/vars/module.yml
+  - /etc/ansible/roles/firewall/vars/sysctl.yml
+  - /etc/ansible/roles/firewall/vars/iptables.yml
+  - /etc/ansible/roles/firewall/vars/contrackd.yml
+  - /etc/ansible/roles/firewall/vars/directory.yml
+  roles:
+  - { role: firewall }
+
+
+
