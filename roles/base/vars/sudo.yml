@@ -22,10 +22,6 @@ sudo_privileges:
         hostgroups: "all"
         user: "ahtapotops"
         commands: "ALL"
-    privilege02:
-        hostgroups: "firewall"
-        user: "lkk"
-        commands: "/usr/bin/tail * /var/log/*, /usr/sbin/iptraf, /bin/zcat -f /var/log/ahtapot/fw/*, /bin/cat /var/log/ahtapot/fw/*, /usr/sbin/arp -an, /usr/sbin/iptstate *, /usr/bin/bmon"
     privilege03:
         hostgroups: "mys"
         user: "git"

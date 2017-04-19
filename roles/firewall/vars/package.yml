@@ -35,9 +35,6 @@ firewall_packages:
     package11:
         name: "bmon=1:3.5-1"
         state: "present" 
-    package12:
-        name: "ahtapot-lkk=1.1.7" 
-        state: "present" 
 #    packageXX:
 #        name: 
 #        state:  
