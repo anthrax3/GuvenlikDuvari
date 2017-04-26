@@ -1,0 +1,11 @@
+---
+# Calistirildiginda Gitolite kurulumu yapilir.
+- hosts: mys
+  remote_user: ahtapotops
+  sudo: yes
+  vars_files:
+  - /etc/ansible/roles/gitolite/vars/admin.yml
+  - /etc/ansible/roles/gitolite/vars/packages.yml
+  - /etc/ansible/roles/gitolite/vars/conf.yml
+  roles:
+  - { role: gitolite }

@@ -1,5 +1,0 @@
----
-# GitLab gorevlerini iceren dosyadir.
-- include: install.yml
-- include: configure.yml
-- include: hook.yml
