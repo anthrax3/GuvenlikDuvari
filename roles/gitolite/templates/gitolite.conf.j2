@@ -6,7 +6,9 @@ repo gitolite-admin
    RW+	=	id_rsa
 
 repo mys
-   RW+	=	ahtapotops
+   RW+				= ahtapotops
+   option hook.post-receive	= mys-post-receive
 
 repo gdysapi
-   RW+	=	ahtapotops
+   RW+				= ahtapotops
+   option hook.post-receive	= gdys-post-receive

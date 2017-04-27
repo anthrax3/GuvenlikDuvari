@@ -1,0 +1,35 @@
+---
+- name: Gitolite .rc dosyasi duzenleniyor.
+  replace:
+     dest: "{{ item.value.dest }}"
+     regexp: "{{ item.value.regexp }}"
+     replace: "{{ item.value.replace }}"
+  with_dict: "gitolite_rc"
+  sudo: "yes"
+  sudo_user: "gitolite"
+  tags: hook
+
+- name: MYS ve GDYS hook dizinleri olusturuluyor.
+  file:
+     path: "{{ hook_directory['path'] }}"
+     owner: "{{ hook_directory['owner'] }}"
+     group: "{{ hook_directory['group'] }}"
+     mode: "{{ hook_directory['mode'] }}"
+     state: "{{ hook_directory['state'] }}"
+  notify: Gitolite-Admin repo degisiklikleri uygulaniyor.
+  sudo: "yes"
+  sudo_user: "gitolite"
+  tags: hook
+
+- name: MYS ve GDYS hook scriptleri olusturuluyor.
+  template:
+     src: "{{ item.value.src }}"
+     dest: "{{ item.value.dest }}"
+     owner: "{{ item.value.owner }}"
+     group: "{{ item.value.group }}"
+     mode: "{{ item.value.mode }}"
+  with_dict: "hook_scripts"
+  notify: Gitolite-Admin repo degisiklikleri uygulaniyor.
+  sudo: "yes"
+  sudo_user: "gitolite"
+  tags: hook

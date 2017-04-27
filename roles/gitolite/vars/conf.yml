@@ -16,10 +16,9 @@ gitolite:
       mode: "0644"
 gitolite_commands:
       command01: "/usr/bin/git -C {{ gitolite['admin-repo']['dest']}} add --all" 
-#{{ gitolite['conf']['dest']}}"
       command02: "/usr/bin/git config --global user.email \"gitolite-admin@ahtapot\""
       command03: "/usr/bin/git config --global user.name \"gitolite-admin\""
-      command04: "/usr/bin/git -C {{ gitolite['admin-repo']['dest']}} commit -m \"MYS ve GDYS repolari ve ahtapotops kullanicisi eklendi.\""
+      command04: "/usr/bin/git -C {{ gitolite['admin-repo']['dest']}} commit -m \"Playbook tarafindan yapilmistir.\""
       command05: "/usr/bin/git -C {{ gitolite['admin-repo']['dest']}} push origin master"
 gitolite_repo_users:
    user01:
