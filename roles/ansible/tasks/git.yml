@@ -1,5 +1,5 @@
 ---
-- name: Git depolari olusturuluyor.
+- name: Git repolari olusturuluyor.
   git:
       repo: "{{ item.value.repo }}"
       dest: "{{ item.value.destination }}"
