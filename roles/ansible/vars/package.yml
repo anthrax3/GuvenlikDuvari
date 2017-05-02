@@ -17,6 +17,3 @@ ansible_packages:
 #    packageXX:
 #        name: 
 #        state:  
-#    packageXX:
-#        name: 
-#        state:  
