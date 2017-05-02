@@ -2,7 +2,7 @@
 # Git repolarinin degiskenlerini iceren dosyadir
 gitrepos:
     repo01:
-        repo: "gitolite@localhost:gdysapi.git"
+        repo: "gitolite@localhost:gdys.git"
         accept_hostkey: "yes"
         destination: "/etc/fw/gdys"
         key_file: "/home/ahtapotops/.ssh/id_rsa"
