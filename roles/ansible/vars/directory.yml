@@ -2,10 +2,10 @@
 # Dizinleri iceren dosyadir.
 directories:
     directory01:
-        path: "/etc/fw/"
+        path: "/etc/fw/gdys/files/"
         group: "ahtapotops"
         owner: "ahtapotops"
-        mode: "750"
+        mode: "0750"
         state: "directory"
 #    directoryXX:
 #        path: ""

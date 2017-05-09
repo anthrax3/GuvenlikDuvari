@@ -1,3 +1,2 @@
 ---
 # Ansible'in isleyici dosyasidir
-- include: git.yml

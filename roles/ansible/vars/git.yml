@@ -1,18 +1,18 @@
 ---
-# Git repolarinin degiskenlerini iceren dosyadir
-gitrepos:
-    repo01:
-        repo: "gitolite@localhost:gdys.git"
-        accept_hostkey: "yes"
-        destination: "/etc/fw/gdys"
-        key_file: "/home/ahtapotops/.ssh/id_rsa"
-    repo02:
-        repo: "gitolite@localhost:mys.git"
-        accept_hostkey: "yes"
-        destination: "/etc/ansible/"
-        key_file: "/home/ahtapotops/.ssh/id_rsa"
-#    repoXX:
-#        repo: ""
-#        accept_hostkey: ""
-#        destination: ""
-#        key_file: ""
+# Git repolarini otomatik olusturmak icin gerekli degiskenleri iceren dosyadir.
+repo_gdys:
+   src: "gdys.fwb.j2"
+   dest: "/etc/fw/gdys/gdys.fwb"
+   owner: "ahtapotops"
+   group: "ahtapotops"
+   mode: "0744"
+   path: "/etc/fw/gdys/"
+   addr: "gitolite@localhost:gdys.git"
+   email: "gitplaybook@ahtapot"
+   user: "Git Playbook"
+
+repo_mys:
+   path: "/etc/ansible/"
+   addr: "gitolite@localhost:mys.git"
+   email: "gitplaybook@ahtapot"
+   user: "Git Playbook"

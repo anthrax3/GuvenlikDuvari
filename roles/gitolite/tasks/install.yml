@@ -7,8 +7,10 @@
   with_dict: "git_packages"
   sudo: "yes"
   tags: install
+  register: result
 
 - name: Gitolite yapilandirmasi uygulaniyor.
   command: "gitolite setup -pk {{ gitolite['ssh-pub']}}"
   sudo: "yes"
   sudo_user: "{{ gitolite['name'] }}"
+  when: result.changed
