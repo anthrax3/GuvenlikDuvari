@@ -26,10 +26,10 @@
 - hosts: mys
   remote_user: ahtapotops
   vars_files:
-  - /etc/ansible/roles/gitolite/var/admin.yml
-  - /etc/ansible/roles/gitolite/var/packages.yml
-  - /etc/ansible/roles/gitolite/var/conf.yml
-  - /etc/ansible/roles/gitolite/var/hooks.yml
+  - /etc/ansible/roles/gitolite/vars/admin.yml
+  - /etc/ansible/roles/gitolite/vars/packages.yml
+  - /etc/ansible/roles/gitolite/vars/conf.yml
+  - /etc/ansible/roles/gitolite/vars/hooks.yml
   roles:
   - { role: gitolite }
 
