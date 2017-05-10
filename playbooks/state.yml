@@ -23,6 +23,16 @@
   roles:
   - { role: base }
  
+- hosts: mys
+  remote_user: ahtapotops
+  vars_files:
+  - /etc/ansible/roles/gitolite/var/admin.yml
+  - /etc/ansible/roles/gitolite/var/packages.yml
+  - /etc/ansible/roles/gitolite/var/conf.yml
+  - /etc/ansible/roles/gitolite/var/hooks.yml
+  roles:
+  - { role: gitolite }
+
 - hosts: mys 
   remote_user: ahtapotops
   vars_files:
@@ -32,15 +42,6 @@
   - /etc/ansible/roles/ansible/vars/git.yml
   roles:
   - { role: ansible }
-
-- hosts: mys 
-  remote_user: ahtapotops
-  sudo: yes
-  vars_files:
-  - /etc/ansible/roles/gitlab/vars/package.yml
-  - /etc/ansible/roles/gitlab/vars/hook.yml
-  roles:
-  - { role: gitlab }
 
 - hosts: mys 
   remote_user: ahtapotops
@@ -64,6 +65,3 @@
   - /etc/ansible/roles/firewall/vars/directory.yml
   roles:
   - { role: firewall }
-
-
-
