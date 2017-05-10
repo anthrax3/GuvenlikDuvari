@@ -33,7 +33,7 @@
   when: result.changed
 
 - name: (GDYS) Yereldeki degisikler uzak sunucuya gonderiliyor.
-  command: "/usr/bin/git -C {{ repo_gdys['path'] }} push origin master"
+  command: "/usr/bin/git -C {{ repo_gdys['path'] }} push -u origin master"
   when: result.changed
 
 - name: (MYS) Yerelde git reposu olusturuluyor.
@@ -61,5 +61,5 @@
   when: result.changed
 
 - name: (MYS) Yereldeki degisikler uzak sunucuya gonderiliyor.
-  command: "/usr/bin/git -C {{ repo_mys['path'] }} push origin master"
+  command: "/usr/bin/git -C {{ repo_mys['path'] }} push -u origin master"
   when: result.changed
