@@ -18,7 +18,7 @@ hook_directory:
    path: "/home/gitolite/gitolite-admin/local/hooks/repo-specific/"
    owner: "gitolite"
    group: "gitolite"
-   mode: "755"
+   mode: "0755"
    state: "directory"
 
 hook_scripts:
@@ -27,10 +27,10 @@ hook_scripts:
       dest: "/home/gitolite/gitolite-admin/local/hooks/repo-specific/mys-post-receive"
       owner: "gitolite"
       group: "gitolite"
-      mode: "755"
+      mode: "0755"
    script02:
       src: "gdys-post-receive.sh.j2"
       dest: "/home/gitolite/gitolite-admin/local/hooks/repo-specific/gdys-post-receive"
       owner: "gitolite"
       group: "gitolite"
-      mode: "755"
+      mode: "0755"
