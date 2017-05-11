@@ -5,8 +5,14 @@ base_ahtapot_directories:
         path: "/var/log/ahtapot/"
         owner: "ahtapotops"
         group: "ahtapotops"
-        mode: "755"
+        mode: "0755"
         state: "directory"
+    directory02:
+        path: "/home/ahtapotops/.ssh/authorized_keys"
+        owner: "ahtapotops"
+        group: "ahtapotops"
+        mode: "0700"
+        state: "touch"
 #    directoryXX:
 #        path: ""
 #        owner: ""

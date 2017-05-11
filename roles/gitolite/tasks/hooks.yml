@@ -32,4 +32,18 @@
   notify: Gitolite-Admin repo degisiklikleri uygulaniyor.
   sudo: "yes"
   sudo_user: "gitolite"
+  register: result
   tags: hook
+
+- name: MYS ve GDYS hook anahtarlari olusturuluyor.
+  command: "/usr/bin/ssh-keygen -t rsa -f {{ item.value.name }} -N ''"
+  with_dict: "hook_keys"
+  sudo: "yes"
+  sudo_user: "gitolite"
+#  when: result.changed
+
+- name: MYS ve GDYS hook anahtarlari authorized_keys'e ekleniyor.
+  command: "/bin/cat {{ item.value.name }}.pub >> /home/ahtapotops/.ssh/authorized_keys"
+  sudo: "yes"
+  with_dict: "hook_keys"  
+#  when: result.changed

@@ -34,3 +34,9 @@ hook_scripts:
       owner: "gitolite"
       group: "gitolite"
       mode: "0755"
+
+hook_keys:
+   key01:
+      name: "/home/gitolite/.ssh/myshook"
+   key02:
+      name: "/home/gitolite/.ssh/gdyshook"
