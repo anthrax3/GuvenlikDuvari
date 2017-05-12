@@ -40,10 +40,14 @@
   with_dict: "hook_keys"
   sudo: "yes"
   sudo_user: "gitolite"
-#  when: result.changed
+  when: result.changed
+  tags: repokeys
 
 - name: MYS ve GDYS hook anahtarlari authorized_keys'e ekleniyor.
-  command: "/bin/cat {{ item.value.name }}.pub >> /home/ahtapotops/.ssh/authorized_keys"
-  sudo: "yes"
+  shell: "/usr/bin/paste <(/bin/echo \"{{ item.value.option }}\") {{ item.value.name }}.pub -d ' ' >> /home/ahtapotops/.ssh/authorized_keys"
+  args:
+     executable: "/bin/bash"
   with_dict: "hook_keys"  
-#  when: result.changed
+  sudo: "yes"
+  when: result.changed
+  tags: repokeys

@@ -11,7 +11,7 @@ base_ahtapot_directories:
         path: "/home/ahtapotops/.ssh/authorized_keys"
         owner: "ahtapotops"
         group: "ahtapotops"
-        mode: "0700"
+        mode: "0600"
         state: "touch"
 #    directoryXX:
 #        path: ""
