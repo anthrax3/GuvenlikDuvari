@@ -38,7 +38,7 @@ hook_scripts:
 hook_keys:
    key01:
       name: "/home/gitolite/.ssh/myshook"
-      option: "command=\"/usr/bin/mys.sh\",no-port-forwarding,no-X11-forwarding,no-pty"
+      option: "command=\"/usr/bin/mys.sh\",no-port-forwarding,no-X11-forwarding"
    key02:
       name: "/home/gitolite/.ssh/gdyshook"
-      option: "command=\"/usr/bin/gdys.sh\",no-port-forwarding,no-X11-forwarding,no-pty"
+      option: "command=\"/usr/bin/gdys.sh\",no-port-forwarding,no-X11-forwarding"
