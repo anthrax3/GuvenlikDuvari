@@ -44,7 +44,7 @@
   tags: repokeys
 
 - name: MYS ve GDYS hook anahtarlari authorized_keys'e ekleniyor.
-  shell: "/usr/bin/paste <(/bin/echo \"{{ item.value.option }}\") {{ item.value.name }}.pub -d ' ' >> /home/ahtapotops/.ssh/authorized_keys"
+  shell: "/usr/bin/paste <(/bin/echo {{ item.value.option }}) {{ item.value.name }}.pub -d ' ' >> /home/ahtapotops/.ssh/authorized_keys"
   args:
      executable: "/bin/bash"
   with_dict: "hook_keys"  
